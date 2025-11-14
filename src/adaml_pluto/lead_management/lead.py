@@ -8,7 +8,7 @@ from pydantic import BaseModel, EmailStr, Field, ConfigDict
 
 class LeadStatus(str, Enum):
     """Enum for lead status tracking."""
-    
+
     NEW = "new"
     CONTACTED = "contacted"
     QUALIFIED = "qualified"
@@ -21,7 +21,7 @@ class LeadStatus(str, Enum):
 class Lead(BaseModel):
     """
     Lead data model for managing sales prospects.
-    
+
     Attributes:
         id: Unique identifier for the lead
         first_name: Lead's first name
@@ -38,7 +38,7 @@ class Lead(BaseModel):
         created_at: Timestamp when lead was created
         updated_at: Timestamp when lead was last updated
     """
-    
+
     id: Optional[str] = None
     first_name: str = Field(..., min_length=1)
     last_name: str = Field(..., min_length=1)
@@ -53,27 +53,27 @@ class Lead(BaseModel):
     custom_fields: Dict[str, Any] = Field(default_factory=dict)
     created_at: datetime = Field(default_factory=datetime.now)
     updated_at: datetime = Field(default_factory=datetime.now)
-    
+
     model_config = ConfigDict(
         json_encoders={
             datetime: lambda v: v.isoformat(),
         }
     )
-    
+
     def update_status(self, status: LeadStatus) -> None:
         """
         Update the lead's status and timestamp.
-        
+
         Args:
             status: New status for the lead
         """
         self.status = status
         self.updated_at = datetime.now()
-    
+
     def add_note(self, note: str) -> None:
         """
         Add a note to the lead's notes.
-        
+
         Args:
             note: Note text to add
         """
@@ -84,14 +84,14 @@ class Lead(BaseModel):
         else:
             self.notes = new_note
         self.updated_at = datetime.now()
-    
+
     def update_score(self, score: int) -> None:
         """
         Update the lead's score.
-        
+
         Args:
             score: New score value (0-100)
-        
+
         Raises:
             ValueError: If score is not between 0 and 100
         """
@@ -99,11 +99,11 @@ class Lead(BaseModel):
             raise ValueError("Score must be between 0 and 100")
         self.score = score
         self.updated_at = datetime.now()
-    
+
     def get_full_name(self) -> str:
         """
         Get the lead's full name.
-        
+
         Returns:
             Full name as a string
         """

@@ -54,4 +54,6 @@ Thumbs.db
 *.log
 *.tmp
 /tmp/
+
+# Examples data
 examples/data/
