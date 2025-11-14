@@ -1,0 +1,32 @@
+# Enhanced ADALM-Pluto Spectrum Analyzer Requirements
+# This file lists all Python dependencies for the enhanced version
+
+# Core SDR libraries
+pyadi-iio>=0.0.14          # Analog Devices Python interface for PlutoSDR
+
+# GUI framework
+PyQt6>=6.4.0               # Modern Qt6 bindings for Python
+pyqtgraph>=0.13.0          # Real-time plotting and data visualization
+
+# Scientific computing
+numpy>=1.21.0              # Numerical computing library
+scipy>=1.7.0               # Scientific computing library
+
+# Optional dependencies for enhanced features
+matplotlib>=3.5.0          # Additional plotting capabilities (optional)
+pandas>=1.3.0              # Data analysis and manipulation (optional)
+
+# System integration (Linux)
+# Note: These are system packages, install via package manager
+# - avahi-utils: Network service discovery
+# - libxcb-cursor-dev: Qt6 cursor support on Linux
+
+# Development and testing (optional)
+pytest>=6.0.0              # Testing framework
+pytest-qt>=4.0.0           # Qt testing support
+black>=22.0.0              # Code formatting
+flake8>=4.0.0              # Code linting
+
+# Documentation (optional)
+sphinx>=4.0.0              # Documentation generation
+sphinx-rtd-theme>=1.0.0    # Read the Docs theme

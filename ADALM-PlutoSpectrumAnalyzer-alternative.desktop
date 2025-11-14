@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ADALM-Pluto Spectrum Analyzer (Alternative)
+Comment=Professional spectrum analysis and RF monitoring toolkit for ADALM-Pluto SDR
+Exec=x-terminal-emulator -e python3 /home/dragos/rf-kit/pluto-sdr/ADALM-Pluto-Spectrum-Analyzer/pluto_menu.py
+Icon=/home/dragos/rf-kit/pluto-sdr/ADALM-Pluto-Spectrum-Analyzer/Pluto.png
+Terminal=false
+Categories=Network;System;X-HamRadio;X-SDR;
+Keywords=pluto;sdr;spectrum;analyzer;rf;signal;monitoring;adalm;radio;frequency;
+StartupNotify=true
+StartupWMClass=adalm-pluto-spectrum-analyzer
+MimeType=application/x-pluto-sdr;
